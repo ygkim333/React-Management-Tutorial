@@ -7,7 +7,7 @@ function App() {
       <img src={logo} alt="log" />
       <h2>Let's develop management system!</h2>
     </div>
-  );
+  ); 
 }
 
 export default App;
