@@ -1,6 +1,6 @@
-import React from "react";
-import "./App.css";
+import React, { Component } from "react";
 import Customer from "./components/Customer";
+import "./App.css";
 import {
   Paper,
   Table,
@@ -25,7 +25,7 @@ const StyledTable = styled(Table)({
 const customers = [
   {
     id: 1,
-    image: "https://i.pravatar.cc/150?img=3",
+    image: "https://i.pravatar.cc/70?img=3",
     name: "박창영",
     birthday: "980630",
     gender: "male",
@@ -33,7 +33,7 @@ const customers = [
   },
   {
     id: 2,
-    image: "https://i.pravatar.cc/150?img=1",
+    image: "https://i.pravatar.cc/70?img=1",
     name: "홍길동",
     birthday: "901023",
     gender: "male",
@@ -41,7 +41,7 @@ const customers = [
   },
   {
     id: 3,
-    image: "https://i.pravatar.cc/150?img=10",
+    image: "https://i.pravatar.cc/70?img=10",
     name: "김수현",
     birthday: "950101",
     gender: "male",
@@ -49,36 +49,39 @@ const customers = [
   },
 ];
 
-function App() {
-  return (
-    <StyledPaper>
-      <StyledTable>
-        <TableHead>
-          <TableRow>
-            <TableCell>번호</TableCell>
-            <TableCell>이미지</TableCell>
-            <TableCell>이름</TableCell>
-            <TableCell>생년월일</TableCell>
-            <TableCell>성별</TableCell>
-            <TableCell>직업</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {customers.map((customer) => (
-            <Customer
-              key={customer.id} // map 을 사용하려면 key 라는 속성이 있어야 함(안하면 Console창에 에러가 발생)
-              id={customer.id}
-              image={customer.image}
-              name={customer.name}
-              birthday={customer.birthday}
-              gender={customer.gender}
-              job={customer.job}
-            />
-          ))}
-        </TableBody>
-      </StyledTable>
-    </StyledPaper>
-  );
+class App extends Component {
+  render(){
+    return (
+      <StyledPaper>
+        <StyledTable>
+          <TableHead>
+            <TableRow>
+              <TableCell>번호</TableCell>
+              <TableCell>이미지</TableCell>
+              <TableCell>이름</TableCell>
+              <TableCell>생년월일</TableCell>
+              <TableCell>성별</TableCell>
+              <TableCell>직업</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {customers.map(c => {
+              return (
+                <Customer key={c.id}
+                          id={c.id}
+                          image={c.image}
+                          name={c.name}
+                          birthday={c.birthday}
+                          gender={c.gender}
+                          job={c.jop}
+                />
+              );             
+            })}
+          </TableBody>
+        </StyledTable>
+      </StyledPaper>
+    );
+  }
 }
 
 export default App;
