@@ -10,7 +10,7 @@ app.get('/api/customers', (req, res) => {
     res.send([
         {
             id: 1,
-            image: "https://i.pravatar.cc/150?img=3",
+            image: "https://i.pravatar.cc/60?img=3",
             name: "박창영",
             birthday: "980630",
             gender: "male",
@@ -18,7 +18,7 @@ app.get('/api/customers', (req, res) => {
         },
         {
             id: 2,
-            image: "https://i.pravatar.cc/150?img=1",
+            image: "https://i.pravatar.cc/60?img=1",
             name: "홍길동",
             birthday: "901023",
             gender: "male",
@@ -26,7 +26,7 @@ app.get('/api/customers', (req, res) => {
         },
         {
             id: 3,
-            image: "https://i.pravatar.cc/150?img=10",
+            image: "https://i.pravatar.cc/60?img=10",
             name: "김수현",
             birthday: "950101",
             gender: "male",
